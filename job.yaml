@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hola-mundo-job
+  namespace: mauricio-toapanta-dev
+spec:
+  template:
+    spec:
+      containers:
+        - name: hola-mundo
+          image: busybox:latest
+          command: ["/bin/sh", "-c"]
+          args:
+          - |
+            echo "hola mundo"
+      restartPolicy: Never
+  backoffLimit: 2  # Número de reintentos en caso de fallo
