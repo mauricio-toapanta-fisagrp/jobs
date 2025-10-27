@@ -28,4 +28,4 @@ jobs:
       - name: Deploy files
         run: |
           oc project mauricio-toapanta-dev
-          oc apply -f job.yaml
+          oc apply -f cronjob.yaml
